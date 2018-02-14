@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 style="text-align:center">Error</h1>
+	<ul>
+	    <li th:each="entry: ${map}">
+	        <span th:text="${entry.key}"></span> = <span th:text="${entry.value}"></span>
+	    </li>
+	</ul>
+</body>
+</html>
