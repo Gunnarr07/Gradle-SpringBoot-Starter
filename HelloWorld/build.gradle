@@ -8,12 +8,18 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: 'war'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
 jar {
     baseName = 'hello-world-web-content'
+    version =  '0.1.0'
+}
+
+war {
+	baseName = 'helloworld'
     version =  '0.1.0'
 }
 
@@ -32,6 +38,7 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.webjars/bootstrap
 	compile group: 'org.webjars', name: 'bootstrap', version: '4.0.0'
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
     compile("org.springframework.boot:spring-boot-devtools")
     testCompile("junit:junit")
 }
